@@ -3,17 +3,23 @@ import { CommonModule } from '@angular/common';
 import { ShopComponent } from './shop.component';
 import { PoductItemComponent } from './poduct-item/poduct-item.component';
 import { SharedModule } from '../shared/shared.module';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RouterModule } from '@angular/router';
+import { ShopRoutingModule } from './shop-routing.module';
 
 
 
 @NgModule({
   declarations: [
     ShopComponent,
-    PoductItemComponent
+    PoductItemComponent,
+    ProductDetailsComponent,
+   
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+   ShopRoutingModule
   ],
   exports :[ShopComponent]
 })
