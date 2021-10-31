@@ -15,13 +15,15 @@ export class ErrorInterceptor implements HttpInterceptor {
                 if (error) {
                     if (error.status === 400) {
                         if (error.error.errors) {
+                            // this.toastr.error(error.error.message, error.error.statusCode);
                             throw error.error;
                         } else {
                             this.toastr.error(error.error.message, error.error.statusCode);
                         }
                     }
                     if (error.status === 401) {
-                        this.toastr.error(error.error.message, error.error.statusCode);
+                        throw error.error;
+                        // this.toastr.error(error.error.message, error.error.statusCode);
                     }
                     if (error.status === 404) {
                         this.router.navigateByUrl('/not-found');
